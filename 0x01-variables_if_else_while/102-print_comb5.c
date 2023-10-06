@@ -19,18 +19,22 @@ int main(void)
 			int tens2 = j / 10;
 			int units2 = j % 10;
 
-			putchar(tens1 + '0');
-			putchar(units1 + '0');
-			putchar(' ');
-			putchar(tens2 + '0');
-			putchar(units2 + '0');
-			if (i != 98 || j != 99)
+			if (i < j && i != j)
 			{
-				putchar(',');
+				putchar(tens1 + '0');
+				putchar(units1 + '0');
 				putchar(' ');
+				putchar(tens2 + '0');
+				putchar(units2 + '0');
+				if (i != 98 || j != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
+
 	putchar('\n');
 	return (0);
 }
