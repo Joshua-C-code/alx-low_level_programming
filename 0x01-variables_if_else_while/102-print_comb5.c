@@ -14,7 +14,7 @@ int main(void)
 		int tens1 = i / 10;
 		int units1 = i % 10;
 
-		for (j = i ; j <= 99 ; j++)
+		for (j = i ; j <= 100 ; j++)
 		{
 			int tens2 = j / 10;
 			int units2 = j % 10;
