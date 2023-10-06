@@ -9,12 +9,12 @@ int main(void)
 {
 	int i, j;
 
-	for (i = 0 ; j <= 99; i++)
+	for (i = 0 ; i <= 99; i++)
 	{
 		int tens1 = i / 10;
 		int units1 = i % 10;
 
-		for (j = i ; j <= 100 ; j++)
+		for (j = 0 ; j <= 99 ; j++)
 		{
 			int tens2 = j / 10;
 			int units2 = j % 10;
@@ -22,11 +22,9 @@ int main(void)
 			putchar(tens1 + '0');
 			putchar(units1 + '0');
 			putchar(' ');
-
 			putchar(tens2 + '0');
 			putchar(units2 + '0');
-
-			if (i != 99 || j != 99)
+			if (i != 98 || j != 99)
 			{
 				putchar(',');
 				putchar(' ');
