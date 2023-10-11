@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - this is a times table
+ * times_table - prints a times table from 0 to 9
  * Return: void
  */
 
