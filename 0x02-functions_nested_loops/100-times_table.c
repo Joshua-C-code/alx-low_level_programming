@@ -1,20 +1,33 @@
+#include "main.h"
 #include <stdio.h>
 /**
- * main - function to sum multiples of 3 or 5 in numbers below 1024
- * Return: 0
+ * print_times_table - the main function prints a times table
+ * @n: function parameter
+ * Return: The times table
  */
 
-int main(void)
+void print_times_table(int n)
 {
-	int sum = 0;
 	int i;
+	int j;
+	int result;
 
-	for (i = 0 ; i < 1024 ; i++)
+	if (n > 15 || n < 0)
+
+	for (i = 0 ; i < n ; i++)
 	{
-		if (i % 3 == 0 || i % 5 == 0)
-			sum = sum + i;
-	}
+		for (j = 0 ; j <= n ; j++)
+		{
+			result = i * j;
 
-	printf("%d\n", sum);
-	return (0);
+			if (j == 0)
+				printf("%d", result);
+			else if (result < 10)
+				printf(", %d", result);
+			else if (result < 100)
+				printf(", %d", result);
+			else
+				printf(", %d", result);
+		}
+	}
 }
