@@ -1,34 +1,37 @@
 #include "main.h"
-#include <stdio.h>
-/**
- * print_times_table - the main function prints a times table
- * @n: function parameter
- * Return: The times table
- */
 
-void print_times_table(int n)
-{
-	int i;
-	int j;
-	int result;
+void print_times_table(int n) {
+    // Check for valid input (0 to 15)
+    if (n < 0 || n > 15) {
+        return;
+    }
+    int i, j, result;
 
-	if (n > 15 || n < 0)
+    for (i = 0; i <= n; i++) {
+        for (j = 0; j <= n; j++) {
+            result = i * j;
 
-		for (i = 0 ; i <= n ; i++)
-		{
-			for (j = 0 ; j <= n ; j++)
-			{
-				result = i * j;
-
-				if (j == 0)
-					printf("%d", result);
-				else if (result < 10 && j != 0)
-					printf(",   %d", result);
-				else if (result >= 10 && result < 100)
-					printf(",  %d%d", result / 10, result % 10);
-				else if (result >= 100)
-					printf(", %d%d%d", result / 100, result / 10, result % 10);
-			}
-		}
-	printf("\n");
+            // Print result
+            if (j == 0) {
+                print_number(result);
+            } else {
+                putchar(',');
+                putchar(' ');
+                print_number(result);
+            }
+        }
+        putchar('\n');
+    }
 }
+void print_number(int num) {
+    if (num >= 100) {
+        putchar(num / 100 + '0');
+        num %= 100;
+    }
+    if (num >= 10) {
+        putchar(num / 10 + '0');
+        num %= 10;
+    }
+    putchar(num + '0');
+}
+
